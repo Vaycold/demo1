@@ -4,17 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#080d17">
-  <meta name="description" content="Byeongchan Kim — AI researcher at Chung-Ang University. Research in audio reasoning, audio-visual deepfake detection, robust computer vision, and machine learning.">
+  <meta name="description" content="Byeongchan Kim — AI researcher at Chung-Ang University. Research in multimodal learning, robust computer vision, audio reasoning and AI agent development. DCASE 2026 1st place and GAPAGO AI Co-Scientist Challenge award.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Byeongchan Kim | AI Research Portfolio">
-  <meta property="og:description" content="Research, projects, and selected publications in AI and machine learning.">
+  <meta property="og:description" content="AI agent projects (GAPAGO and Tikkeul), DCASE 2026 1st place, challenge awards and selected publications.">
   <title>Byeongchan Kim | AI Research Portfolio</title>
   <!--
     PERSONALIZATION QUICK GUIDE
     1) Intro text: search for id="home".
     2) Project details: search for id="projects" and for <dialog>.
-    3) Publications: search for id="publications".
-    4) Contact email: search for CONTACT_EMAIL in the script at the bottom.
+    3) AI Agent projects: search for id="agents".
+    4) Publications and awards: search for id="publications" and id="awards".
+    5) Presentation asset: assets/tikkeul-presentation.pdf (included in site ZIP).
+    6) Contact email: search for CONTACT_EMAIL in the script at the bottom.
     This entire page works as a single index.html; no asset folder or build system is required.
   -->
   <style>
@@ -148,6 +150,42 @@
     .project-arrow { font-size: 22px; color: var(--blue); flex: none; transition: transform .2s; }
     .project-card:hover .project-arrow { transform: translate(3px, -3px); }
 
+
+    /* AI agent showcase */
+    .agent-section { background: linear-gradient(180deg, #0b1321 0%, #080d17 100%); }
+    .agent-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 19px; }
+    .agent-card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 31px; border: 1px solid #345071; border-radius: 17px; background: radial-gradient(circle at 100% 0%,rgba(58,117,224,.17),transparent 43%),linear-gradient(145deg,#13243b,#0d1828 80%); }
+    .agent-card.agent-finance { border-color: #356359; background: radial-gradient(circle at 100% 0%,rgba(82,203,168,.13),transparent 40%),linear-gradient(145deg,#122b30,#0e1926 80%); }
+    .agent-kicker { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; color: #9bbce8; font-size: 11px; font-weight: 750; }
+    .agent-finance .agent-kicker { color: #8ed9c3; }
+    .agent-badge { display: inline-block; padding: 5px 10px; border: 1px solid rgba(124,183,252,.32); border-radius: 99px; background: rgba(60,130,230,.12); color: #d5eaff; font-size: 10px; letter-spacing: 0; }
+    .agent-finance .agent-badge { border-color: rgba(82,203,168,.35); background: rgba(82,203,168,.1); color: #b4f2df; }
+    .agent-card h3 { margin: 27px 0 9px; color: var(--text); font-size: clamp(28px,3vw,36px); letter-spacing: -.055em; line-height: 1.25; }
+    .agent-subtitle { margin: 0 0 15px; color: #b4c7de; font-size: 14px; font-weight: 650; }
+    .agent-description { margin: 0; color: var(--muted); line-height: 1.9; font-size: 13px; }
+    .agent-proof { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 11px; margin: 25px 0 18px; }
+    .agent-proof > div { padding: 14px 15px; border: 1px solid rgba(136,166,211,.19); background: rgba(10,18,30,.44); border-radius: 11px; }
+    .agent-proof strong { display: block; color: var(--text); font-size: 23px; line-height: 1.2; letter-spacing: -.03em; }
+    .agent-proof span { display: block; color: #90a3bc; font-size: 11px; margin-top: 6px; line-height: 1.6; }
+    .agent-feature-list { margin: 4px 0 22px; padding-left: 18px; color: #a8b8cd; font-size: 12px; line-height: 1.9; }
+    .agent-feature-list li { padding-left: 3px; margin-bottom: 3px; }
+    .agent-actions { display: flex; gap: 9px; flex-wrap: wrap; align-items: center; margin-top: auto; }
+    .agent-actions .btn { min-height: 39px; padding: 9px 11px; font-size: 11px; }
+    .agent-card button.btn { appearance: none; }
+    .agent-tiny-note { color: #8498b0; font-size: 11px; margin: 14px 0 0; line-height: 1.75; }
+
+    /* Awards / achievements */
+    .honor-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+    .honor-item { padding: 24px 25px; border: 1px solid var(--line); border-radius: 13px; background: linear-gradient(145deg,#132239,#0e1828); display: flex; flex-direction: column; gap: 10px; }
+    .honor-upper { display: flex; justify-content: space-between; gap: 13px; align-items: center; }
+    .honor-year { color: var(--blue); font-size: 11px; font-weight: 800; }
+    .honor-type { border-radius: 99px; padding: 4px 9px; font-size: 10px; color: #b4f4e1; background: rgba(82,203,168,.09); border: 1px solid rgba(82,203,168,.22); }
+    .honor-type.finalist { color: #aebbcf; border-color: #33455d; background: #182437; }
+    .honor-item h3 { color: var(--text); font-size: 20px; line-height: 1.4; margin: 0; letter-spacing: -.035em; }
+    .honor-item p { font-size: 12px; line-height: 1.85; color: var(--muted); margin: 0; }
+    .honor-source { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 4px; }
+    .honor-source a { font-size: 11px; color: #a9d3ff; text-decoration: underline; text-underline-offset: 3px; }
+
     /* Publications */
     .pub-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
     .pub-item { display: grid; grid-template-columns: 80px minmax(0, 1fr) auto; column-gap: 30px; padding: 29px 4px 30px; border-bottom: 1px solid var(--line); }
@@ -211,12 +249,14 @@
     /* Content stays visible even when browsers do not run scroll observers. */
     .reveal { opacity: 1; transform: none; }
     @media (max-width: 1020px) {
-      .desktop-nav { gap: 18px; }
+      .desktop-nav { gap: 15px; }
       .about-layout { gap: 40px; }
       .skills-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
       .timeline-layout { gap: 36px; }
       .contact-layout { gap: 40px; }
       .pub-item { grid-template-columns: 68px minmax(0,1fr); gap: 14px 20px; }
+      .agent-grid { gap: 14px; }
+      .agent-card { padding: 23px; }
       .pub-links { grid-column: 2; justify-content: flex-start; }
     }
     @media (max-width: 760px) {
@@ -235,7 +275,7 @@
       .metric-label { min-height: auto; }
       .section { padding: 80px 0; }
       .about-layout { grid-template-columns: 1fr; gap: 22px; }
-      .projects-grid { grid-template-columns: 1fr; }
+      .projects-grid, .agent-grid, .honor-list { grid-template-columns: 1fr; }
       .section-head.split { display: block; }
       .section-head .aside-label { margin-top: 10px; }
       .timeline-layout, .contact-layout { grid-template-columns: 1fr; gap: 30px; }
@@ -255,6 +295,9 @@
       .pub-year, .pub-links { grid-column: 1; }
       .pub-title { font-size: 16px; }
       .project-card { padding: 23px; }
+      .agent-card { padding: 21px; }
+      .honor-item { padding: 21px; }
+      .agent-card h3 { font-size: 31px; }
       .dialog-heading { padding: 19px 20px; }
       .dialog-content { padding: 20px; }
     }
@@ -273,17 +316,18 @@
     <div class="desktop-nav">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
+      <a href="#agents">AI Agents</a>
       <a href="#projects">Projects</a>
       <a href="#publications">Publications</a>
-      <a href="#journey">Journey</a>
+      <a href="#awards">Awards</a>
       <a href="#contact">Contact</a>
     </div>
     <a class="header-link" href="https://github.com/Vaycold" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-nav">☰</button>
   </nav>
   <nav id="mobile-nav" class="mobile-nav container" aria-label="모바일 메뉴">
-    <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
-    <a href="#publications">Publications</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#agents">AI Agents</a><a href="#projects">Projects</a>
+    <a href="#publications">Publications</a><a href="#awards">Awards</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
     <a href="https://github.com/Vaycold" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
   </nav>
 </header>
@@ -294,18 +338,18 @@
     <div class="container hero-inner">
       <div class="status mono reveal"><span class="status-dot" aria-hidden="true"></span> AI RESEARCHER · CHUNG-ANG UNIVERSITY</div>
       <h1 id="hero-title" class="reveal">데이터에서 <span class="gradient-text">진짜 신호</span>를 찾는<br>AI 연구자, Byeongchan Kim</h1>
-      <p class="hero-description reveal">통계학을 기반으로 <strong>Audio · Computer Vision · Multimodal AI</strong>를 연구합니다.<br>모델이 무엇을 학습하는지, 왜 실패하는지, 새로운 환경에서도 신뢰할 수 있는지를 질문합니다.</p>
+      <p class="hero-description reveal">통계학을 기반으로 <strong>Audio · Multimodal AI · AI Agents</strong>를 연구하고 구현합니다.<br>모델의 일반화와 신뢰성부터 논문 분석 에이전트, 실제 사용자를 위한 금융 AI 서비스까지 연결합니다.</p>
       <p class="terminal mono reveal"><span class="prompt">$</span> research --focus "robustness, generalization, grounding"<span class="cursor" aria-hidden="true"></span></p>
       <div class="cta-row reveal">
-        <a class="btn btn-primary" href="#projects">연구 프로젝트 보기 <span aria-hidden="true">↘</span></a>
+        <a class="btn btn-primary" href="#agents">AI Agent 프로젝트 보기 <span aria-hidden="true">↘</span></a>
         <a class="btn btn-secondary" href="#publications">논문 살펴보기 <span aria-hidden="true">↗</span></a>
         <a class="btn btn-plain" href="https://github.com/Vaycold" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       </div>
       <div class="metrics reveal" aria-label="연구 활동 요약">
         <div class="metric"><span class="metric-label">DCASE 2026 Task 5</span><strong class="metric-value">1st</strong><span class="metric-caption">Overall challenge ranking</span></div>
+        <div class="metric"><span class="metric-label">GAPAGO · AI Co-Scientist</span><strong class="metric-value">Award</strong><span class="metric-caption">2026 Track 2 · 우수상</span></div>
+        <div class="metric"><span class="metric-label">Finance AI Challenge</span><strong class="metric-value">Finalist</strong><span class="metric-caption">14 teams / 536 submissions</span></div>
         <div class="metric"><span class="metric-label">Selected publications</span><strong class="metric-value">04</strong><span class="metric-caption">Journals &amp; workshop</span></div>
-        <div class="metric"><span class="metric-label">Object detection defense</span><strong class="metric-value">02</strong><span class="metric-caption">RAPID · OD-SHIELD</span></div>
-        <div class="metric"><span class="metric-label">Research domains</span><strong class="metric-value">03+</strong><span class="metric-caption">Audio · Vision · Genomics</span></div>
       </div>
     </div>
   </section>
@@ -319,13 +363,13 @@
       </div>
       <div class="about-copy reveal">
         <p>안녕하세요. <strong>중앙대학교(Chung-Ang University)</strong>에서 통계학을 전공한 AI 연구자 <strong>Byeongchan Kim</strong>입니다.</p>
-        <p>오디오가 실제 정답의 근거로 활용되는지, 생성된 영상의 미세한 불일치를 구분할 수 있는지, 적대적 공격이 가해져도 객체 탐지 모델이 제 기능을 유지할 수 있는지에 관심이 있습니다.</p>
-        <p>연구에서는 <strong>현상의 정량적 분석 → 가설 설정 → 모델 설계 → 검증과 일반화 평가</strong>로 이어지는 과정을 중요하게 생각합니다.</p>
+        <p>오디오가 실제 정답의 근거로 활용되는지, 생성된 영상의 미세한 불일치를 구분할 수 있는지, 적대적 공격에도 객체 탐지 모델이 강건한지 연구합니다. 동시에 <strong>문헌 조사·근거 검증·정책 판단</strong>을 수행하는 AI Agent를 실제 서비스로 구현합니다.</p>
+        <p>연구와 개발에서는 <strong>문제 정의 → 데이터 및 근거 확보 → 시스템 설계 → 정량 검증</strong>의 과정을 중요하게 생각합니다. LLM의 판단이 필요한 부분과 규칙·수식으로 확정해야 하는 부분을 분리합니다.</p>
         <div class="research-cards" aria-label="주요 연구 관심사">
           <div class="research-mini"><span class="mini-number mono">01 / AUDIO</span><h3>Audio Grounding</h3><p>오디오 근거 기반 추론과 음성 딥페이크 탐지</p></div>
           <div class="research-mini"><span class="mini-number mono">02 / MULTIMODAL</span><h3>Cross-modal Consistency</h3><p>음성·영상 표현 간 정합성과 불일치 분석</p></div>
           <div class="research-mini"><span class="mini-number mono">03 / VISION</span><h3>Robust Computer Vision</h3><p>객체 탐지와 적대적 패치 공격 방어</p></div>
-          <div class="research-mini"><span class="mini-number mono">04 / EVALUATION</span><h3>Generalization</h3><p>도메인 변화와 미관측 생성 모델에 대한 평가</p></div>
+          <div class="research-mini"><span class="mini-number mono">04 / AGENTS</span><h3>Agentic AI</h3><p>LangGraph 기반 멀티에이전트, 검색·검증, 규칙 엔진</p></div>
         </div>
       </div>
     </div>
@@ -339,16 +383,53 @@
         <article class="skill-card reveal"><div class="skill-icon mono">A</div><h3>Audio &amp; Multimodal</h3><div class="tag-list"><span class="tag">Audio-Language Models</span><span class="tag">AV-HuBERT</span><span class="tag">Speech Deepfake</span><span class="tag">Audio-Visual Learning</span><span class="tag">Audio QA</span></div></article>
         <article class="skill-card reveal"><div class="skill-icon mono">V</div><h3>Computer Vision</h3><div class="tag-list"><span class="tag">PyTorch</span><span class="tag">Object Detection</span><span class="tag">ResNet</span><span class="tag">Vision Transformers</span><span class="tag">Video Modeling</span></div></article>
         <article class="skill-card reveal"><div class="skill-icon mono">Σ</div><h3>Machine Learning &amp; Stats</h3><div class="tag-list"><span class="tag">Python</span><span class="tag">Statistical Analysis</span><span class="tag">scikit-learn</span><span class="tag">Experiment Design</span><span class="tag">Robustness / OOD</span></div></article>
-        <article class="skill-card reveal"><div class="skill-icon mono">{ }</div><h3>Research Engineering</h3><div class="tag-list"><span class="tag">Linux</span><span class="tag">Docker</span><span class="tag">Git / GitHub</span><span class="tag">Multi-GPU Training</span><span class="tag">LoRA</span><span class="tag">Reproducibility</span></div></article>
+        <article class="skill-card reveal"><div class="skill-icon mono">{ }</div><h3>AI Agents &amp; Engineering</h3><div class="tag-list"><span class="tag">LangGraph</span><span class="tag">RAG / Reranking</span><span class="tag">ReAct</span><span class="tag">FastAPI</span><span class="tag">TypeScript</span><span class="tag">Docker / Linux</span><span class="tag">Git / GitHub</span></div></article>
       </div>
     </div>
   </section>
 
-  <!-- 03 / PROJECTS -->
+  <!-- 03 / AI AGENTS -->
+  <section id="agents" class="section agent-section" aria-labelledby="agents-title">
+    <div class="container">
+      <div class="section-head split reveal">
+        <div><p class="section-eyebrow mono">03 — AI AGENTS</p><h2 class="section-title" id="agents-title">From Research to Working Agents</h2><p class="section-lead">실제 논문 근거를 검증하고, 금융 정책의 지원 자격을 판단하는 에이전트. 연구용 프로토타입을 넘어 작동하는 시스템으로 연결한 프로젝트입니다.</p></div>
+        <span class="aside-label mono">RESEARCH INTELLIGENCE &amp; FINTECH</span>
+      </div>
+      <div class="agent-grid">
+        <article class="agent-card reveal">
+          <div class="agent-kicker mono"><span>01 / RESEARCH MULTI-AGENT</span><span class="agent-badge">🏆 2026 AI Co-Scientist · 우수상</span></div>
+          <h3>GAPAGO</h3>
+          <p class="agent-subtitle">Research GAP Analysis &amp; AI Co-Scientist</p>
+          <p class="agent-description">연구 주제에 맞는 논문 원문을 찾아 한계점을 추출하고, 인용 근거와 최신 연구를 교차 검증해 아직 해결되지 않은 연구 공백을 제안하는 멀티에이전트 시스템입니다. <strong>코딩맹수 팀 AI / 모델 개발</strong>에 참여했습니다.</p>
+          <div class="agent-proof">
+            <div><strong>우수상</strong><span>Track 2 · 한국과학기술연구원장상</span></div>
+            <div><strong>272 → 10</strong><span>지원팀 → AI Agent 본심사 개발팀</span></div>
+          </div>
+          <ul class="agent-feature-list"><li>8개 검색 소스와 BM25 · FAISS · CrossEncoder 기반 검색/리랭킹</li><li>Full-text 한계 추출 → 근거 검증 → 최신성 확인 → GAP 추론</li><li>LangGraph 오케스트레이터 및 검증 실패 시 재탐색하는 품질 게이트</li></ul>
+          <div class="agent-actions"><button type="button" class="btn btn-primary" data-dialog="modal-gapago" aria-haspopup="dialog">프로젝트 상세 ↗</button><a class="btn btn-secondary" href="https://github.com/Coding-Maengsu/gapago" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="btn btn-plain" href="https://webzine.nrf.re.kr/magazine/2605/sub9.php" target="_blank" rel="noopener noreferrer">수상 기사 ↗</a></div>
+        </article>
+        <article class="agent-card agent-finance reveal">
+          <div class="agent-kicker mono"><span>02 / FINANCIAL AI AGENT</span><span class="agent-badge">2026 Finance AI · Finalist</span></div>
+          <h3>영끌 아닌, 티끌</h3>
+          <p class="agent-subtitle">취업 전의 티끌부터, 취업 후의 목돈까지</p>
+          <p class="agent-description">청년·취업준비생을 위해 흩어진 지원정책과 채용공고를 탐색하고, 자격 요건을 규칙 기반으로 판정하며, 일정·자산 형성 시뮬레이션까지 연결하는 금융 AI 웹서비스입니다. <strong>코딩맹수 팀(김희민·김병찬)</strong>으로 발표 심사에 참여했습니다.</p>
+          <div class="agent-proof">
+            <div><strong>14 / 536</strong><span>발표 심사 진출팀 / 제출팀</span></div>
+            <div><strong>4,475</strong><span>발표자료 기준 정책 DB 건수</span></div>
+          </div>
+          <ul class="agent-feature-list"><li>LangGraph.js ReAct 기반 Profile Agent / Policy Agent와 규칙 엔진</li><li>정책 추천·자격 판정, 근거 기반 채용 매칭, 일정 추천</li><li>취업 후 실수령·현금흐름·복리 시뮬레이션은 코드로 계산, AI는 해설</li></ul>
+          <div class="agent-actions"><button type="button" class="btn btn-primary" data-dialog="modal-tikkeul" aria-haspopup="dialog">프로젝트 상세 ↗</button><a class="btn btn-secondary" href="assets/tikkeul-presentation.pdf" target="_blank" rel="noopener noreferrer">발표자료 PDF ↗</a><a class="btn btn-plain" href="https://daker.ai/community/2026-financial-ai-challenge-14-finalists" target="_blank" rel="noopener noreferrer">본선 발표 기사 ↗</a></div>
+          <p class="agent-tiny-note">* 금융 AI Challenge는 발표 심사 진출(Finalist)이며, 수상으로 표시하지 않았습니다.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 / PROJECTS -->
   <section id="projects" class="section" aria-labelledby="projects-title">
     <div class="container">
       <div class="section-head split reveal">
-        <div><p class="section-eyebrow mono">03 — PROJECTS</p><h2 class="section-title" id="projects-title">Selected Research Projects</h2><p class="section-lead">논문과 현재 진행하는 연구를 중심으로 정리한 주요 프로젝트입니다.</p></div>
+        <div><p class="section-eyebrow mono">04 — PROJECTS</p><h2 class="section-title" id="projects-title">Selected Research Projects</h2><p class="section-lead">논문과 현재 진행하는 연구를 중심으로 정리한 주요 프로젝트입니다.</p></div>
         <span class="aside-label mono">카드를 눌러 세부 내용을 확인하세요.</span>
       </div>
       <div class="projects-grid">
@@ -379,7 +460,7 @@
   <!-- 04 / PUBLICATIONS -->
   <section id="publications" class="section alternate" aria-labelledby="pubs-title">
     <div class="container">
-      <div class="section-head reveal"><p class="section-eyebrow mono">04 — PUBLICATIONS</p><h2 class="section-title" id="pubs-title">Selected Publications</h2><p class="section-lead">중앙대학교 소속 Byeongchan Kim / Byeong-Chan Kim의 저자 표기를 공식 논문과 기관 자료에서 확인한 목록입니다.</p></div>
+      <div class="section-head reveal"><p class="section-eyebrow mono">05 — PUBLICATIONS</p><h2 class="section-title" id="pubs-title">Selected Publications</h2><p class="section-lead">중앙대학교 소속 Byeongchan Kim / Byeong-Chan Kim의 저자 표기를 공식 논문과 기관 자료에서 확인한 목록입니다.</p></div>
       <ol class="pub-list">
         <li class="pub-item reveal">
           <div class="pub-year mono">2026</div>
@@ -423,15 +504,31 @@
     </div>
   </section>
 
-  <!-- 05 / JOURNEY -->
+  <!-- 06 / AWARDS & COMPETITIONS -->
+  <section id="awards" class="section" aria-labelledby="awards-title">
+    <div class="container">
+      <div class="section-head reveal"><p class="section-eyebrow mono">06 — AWARDS &amp; COMPETITIONS</p><h2 class="section-title" id="awards-title">Awards &amp; Honors</h2><p class="section-lead">공식 결과·연구실 기록·대회 운영기관에서 확인 가능한 성과를 정리했습니다. 수상과 발표 심사 진출은 구분하여 표기합니다.</p></div>
+      <div class="honor-list">
+        <article class="honor-item reveal"><div class="honor-upper"><span class="honor-year mono">2026 · DCASE</span><span class="honor-type">1ST PLACE</span></div><h3>DCASE 2026 Task 5 · Overall 1위</h3><p>Audio-Dependent Question Answering (ADQA) 챌린지. 중앙대학교 팀, 공식 평가 정확도 58.33%. 오디오 근거 기반 추론 연구.</p><div class="honor-source"><a href="https://dcase.community/challenge2026/task-audio-dependent-question-answering" target="_blank" rel="noopener noreferrer">공식 결과 ↗</a><a href="https://ikwak2.github.io/" target="_blank" rel="noopener noreferrer">연구실 기록 ↗</a></div></article>
+        <article class="honor-item reveal"><div class="honor-upper"><span class="honor-year mono">2026 · AI CO-SCIENTIST</span><span class="honor-type">EXCELLENCE AWARD</span></div><h3>GAPAGO · Track 2 우수상</h3><p>2026 AI Co-Scientist Challenge Korea. 코딩맹수 팀의 연구 GAP 탐색 에이전트로 <strong>한국과학기술연구원장상</strong> 수상.</p><div class="honor-source"><a href="https://webzine.nrf.re.kr/magazine/2605/sub9.php" target="_blank" rel="noopener noreferrer">한국연구재단 공식 수상 명단 ↗</a><a href="https://github.com/Coding-Maengsu/gapago" target="_blank" rel="noopener noreferrer">프로젝트 ↗</a></div></article>
+        <article class="honor-item reveal"><div class="honor-upper"><span class="honor-year mono">2026 · FINANCIAL AI</span><span class="honor-type finalist">FINALIST · NOT AN AWARD</span></div><h3>금융 AI Challenge · 발표 심사 진출</h3><p>코딩맹수 팀의 금융 AI Agent <strong>‘영끌 아닌, 티끌’</strong>. 536개 제출팀 중 발표 심사에 진출한 14개 팀에 포함되어 2026년 10월 발표.</p><div class="honor-source"><a href="https://daker.ai/community/2026-financial-ai-challenge-14-finalists" target="_blank" rel="noopener noreferrer">발표 심사 진출 명단 ↗</a><a href="assets/tikkeul-presentation.pdf" target="_blank" rel="noopener noreferrer">발표자료 ↗</a></div></article>
+        <article class="honor-item reveal"><div class="honor-upper"><span class="honor-year mono">2022 · DREAM CHALLENGE</span><span class="honor-type">3RD PLACE</span></div><h3>Random Promoter Sequence Prediction · 3위</h3><p>Unlock_DNA 팀으로 유전자 발현 예측 DREAM Challenge 3위. 이후 관련 공동 연구 결과가 <em>Nature Biotechnology</em>에 게재되었습니다.</p><div class="honor-source"><a href="https://ikwak2.github.io/aboutme.html" target="_blank" rel="noopener noreferrer">지도교수 공식 실적 ↗</a><a href="https://doi.org/10.1038/s41587-024-02414-w" target="_blank" rel="noopener noreferrer">연구 논문 ↗</a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 / JOURNEY -->
   <section id="journey" class="section alternate" aria-labelledby="journey-title">
     <div class="container timeline-layout">
-      <div class="reveal"><p class="section-eyebrow mono">05 — JOURNEY</p><h2 class="section-title" id="journey-title">Research Milestones</h2><p class="section-lead">주요 연구 발표와 활동을 간단히 정리했습니다.</p></div>
+      <div class="reveal"><p class="section-eyebrow mono">07 — JOURNEY</p><h2 class="section-title" id="journey-title">Research Milestones</h2><p class="section-lead">주요 연구 발표와 활동을 간단히 정리했습니다.</p></div>
       <ol class="timeline-list">
-        <li class="timeline-item reveal"><time datetime="2026">2026 · DCASE Workshop</time><h3>DCASE 2026 Task 5 종합 1위</h3><p>Audio-Dependent Question Answering 시스템 연구 및 학술대회 논문 공동 1저자 발표.</p></li>
+        <li class="timeline-item reveal"><time datetime="2026-10">2026.10 · Financial AI Challenge</time><h3>‘영끌 아닌, 티끌’ 발표 심사</h3><p>코딩맹수 팀으로 14개 발표 심사 진출팀에 선정. 개인 맞춤 정책·채용·자산 관리 AI Agent 발표.</p></li>
+        <li class="timeline-item reveal"><time datetime="2026-07">2026 · DCASE Workshop</time><h3>DCASE 2026 Task 5 종합 1위</h3><p>Audio-Dependent Question Answering 시스템 연구 및 학술대회 논문 공동 1저자 발표.</p></li>
+        <li class="timeline-item reveal"><time datetime="2026-04">2026.04 · AI Co-Scientist Challenge</time><h3>GAPAGO · Track 2 우수상</h3><p>연구 GAP 분석 멀티에이전트 개발. 한국과학기술연구원장상 수상(코딩맹수 팀).</p></li>
         <li class="timeline-item reveal"><time datetime="2025">2025 · IEEE Access</time><h3>OD-SHIELD 제1저자 논문 게재</h3><p>Convolutional Autoencoder를 활용한 적대적 패치 공격 방어 연구.</p></li>
         <li class="timeline-item reveal"><time datetime="2024">2024–2025 · Nature Biotechnology</time><h3>Gene Regulation 연구 공동 저자</h3><p>Random Promoter DREAM Challenge를 기반으로 한 서열 예측 모델 최적화 연구.</p></li>
         <li class="timeline-item reveal"><time datetime="2024">2024 · JKSU-CIS</time><h3>RAPID 공동 저자 논문 게재</h3><p>다양한 적대적 패치 공격을 위한 2단계 검출·마스킹 프레임워크.</p></li>
+        <li class="timeline-item reveal"><time datetime="2022">2022 · DREAM Challenge</time><h3>Unlock_DNA 팀 3위</h3><p>Random promoter sequence 기반 유전자 발현 예측 경진대회 3위.</p></li>
         <li class="timeline-item reveal"><time>Education</time><h3>Chung-Ang University</h3><p>통계학 석사(M.S. in Statistics).</p></li>
       </ol>
     </div>
@@ -440,15 +537,35 @@
   <!-- 06 / CONTACT -->
   <section id="contact" class="section contact-section" aria-labelledby="contact-title">
     <div class="container contact-layout">
-      <div class="reveal"><p class="section-eyebrow mono">06 — CONTACT</p><h2 class="section-title" id="contact-title">함께 연구할<br>문제가 있나요?</h2><p class="section-lead">Audio, Computer Vision, Multimodal AI, 그리고 모델의 강건성과 일반화에 관한 연구와 협업을 환영합니다.</p></div>
+      <div class="reveal"><p class="section-eyebrow mono">08 — CONTACT</p><h2 class="section-title" id="contact-title">함께 연구할<br>문제가 있나요?</h2><p class="section-lead">Audio &amp; Multimodal AI, Computer Vision, Research Agents, 금융 AI 서비스의 연구·개발 협업을 환영합니다.</p></div>
       <div class="reveal"><div class="email-card"><p class="mono">RESEARCH CONTACT</p><div class="email-address" id="email-text">moch1996@cau.ac.kr</div><div class="email-actions"><a class="btn btn-primary" id="email-link" href="mailto:moch1996@cau.ac.kr">이메일 보내기 ↗</a><button type="button" class="btn btn-secondary" id="copy-email" aria-live="polite">이메일 복사</button><a class="btn btn-plain" href="https://github.com/Vaycold" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div><p class="contact-hint">이메일 주소는 공개된 공동 저자 논문에 기재된 소속 이메일을 사용했습니다.</p></div>
     </div>
   </section>
 </main>
 
-<footer class="footer"><div class="footer-inner container"><span>© 2026 Byeongchan Kim · Chung-Ang University</span><span>Designed as a lightweight, single-file research portfolio · <a href="#home">Back to top ↑</a></span></div></footer>
+<footer class="footer"><div class="footer-inner container"><span>© 2026 Byeongchan Kim · Chung-Ang University</span><span>HTML-only portfolio · presentation PDF in assets/ · <a href="#home">Back to top ↑</a></span></div></footer>
 
 <!-- Project detail dialogs: modify texts here without touching JavaScript. -->
+<dialog id="modal-gapago" aria-labelledby="modal-gapago-title">
+  <div class="dialog-heading"><div><p class="mono">2026 · MULTI-AGENT RESEARCH · AWARD WINNER</p><h2 id="modal-gapago-title">GAPAGO — Research Gap Analysis Agent</h2></div><button class="dialog-close" type="button" data-close aria-label="닫기">×</button></div>
+  <div class="dialog-content"><p class="dialog-caption">2026 AI Co-Scientist Challenge Korea · Track 2 우수상(한국과학기술연구원장상) · Team Coding-Maengsu · AI/Model Developer</p>
+    <h3>문제와 목표</h3><p>연구자가 선행 연구의 빈틈을 찾을 때 단순한 LLM 요약은 원문 근거가 불충분하거나 이미 해결된 한계를 놓칠 수 있습니다. 실제 논문 전문에 기초한 검증 가능한 Research GAP 분석을 자동화했습니다.</p>
+    <h3>핵심 파이프라인</h3><ul><li>주제 적합성 판단·검색 쿼리 정제·사람의 입력을 받는 Human-in-the-Loop</li><li>arXiv·Crossref·Semantic Scholar·OpenAlex·ScienceON·웹 등 8개 검색 소스 병렬 통합</li><li>BM25 → FAISS 임베딩 유사도 → CrossEncoder 리랭킹</li><li>원문 Full-text 한계점 추출 → 원자적 근거 검증(FActScore 계열) → 검색 기반 최신성 확인</li><li>LangGraph 오케스트레이터 및 Critic 평가로 미달 시 재탐색·재추출</li><li>근거 논문을 인용하는 구조화된 GAP 보고서 출력</li></ul>
+    <h3>팀과 성과</h3><p>코딩맹수 팀(김희민, 가형순, 김병찬, 황재원). AI Co-Scientist Challenge Track 2 사전 심사 272팀 지원, 10팀 개발 단계 진출 후 우수상 수상. 공식 한국연구재단 웹진에는 한국과학기술연구원장상으로 기록되어 있습니다.</p>
+    <div class="dialog-links"><a href="https://github.com/Coding-Maengsu/gapago" target="_blank" rel="noopener noreferrer">Source Code &amp; Architecture ↗</a><a href="https://webzine.nrf.re.kr/magazine/2605/sub9.php" target="_blank" rel="noopener noreferrer">한국연구재단 수상 기사 ↗</a><a href="https://www.mt.co.kr/tech/2026/01/19/2026011909024277244" target="_blank" rel="noopener noreferrer">예선 선정 보도 ↗</a></div>
+  </div>
+</dialog>
+<dialog id="modal-tikkeul" aria-labelledby="modal-tikkeul-title">
+  <div class="dialog-heading"><div><p class="mono">2026 · FINANCE AI AGENT · FINALIST</p><h2 id="modal-tikkeul-title">영끌 아닌, 티끌</h2></div><button class="dialog-close" type="button" data-close aria-label="닫기">×</button></div>
+  <div class="dialog-content"><p class="dialog-caption">2026 금융 AI Challenge · 발표 심사 진출(14/536 제출팀) · 코딩맹수(김희민·김병찬) · 오프라인 발표 2026.10.13</p>
+    <h3>프로젝트 목표</h3><p>취업준비생의 정책 탐색·자격 판단·일정 관리 문제를 해결하고, 취업 후 소비·저축 시나리오까지 연결하는 개인 맞춤형 금융 AI 서비스입니다.</p>
+    <h3>주요 기능</h3><ul><li><strong>청년정책:</strong> 4,475건의 정책 DB(발표 당시)를 활용한 프로필·일정 기반 정책 검색, 추천 및 자격 판정</li><li><strong>멀티에이전트:</strong> 질의를 분해하는 Orchestrator, Profile Agent / Policy Agent, LangGraph.js ReAct 도구 호출, 규칙 엔진 우선 판정</li><li><strong>채용공고:</strong> 역량 키워드를 하위 개념으로만 확장하는 BFS 기반 매칭과 공고 원문의 근거 강조</li><li><strong>재무 시뮬레이션:</strong> 소득세·4대보험·복리 계산 및 보수/기본/공격 시나리오 비교. 수치와 자격 판정은 코드, 요약·해설은 AI로 분리</li><li><strong>기술:</strong> Next.js 16, React 19, TypeScript, Supabase PostgreSQL, Groq gpt-oss-120b, Tavily, Vercel Cron</li></ul>
+    <h3>발표자료 기반 내부 검증</h3><p>공식 정책 3종을 바탕으로 정답을 사전 고정한 합성 사례 30건에서 자격 판정 30/30 일치, 음성 사례 16건 중 거짓 양성 0건, 반복 10건 × 3회 판정 일관성 100%, LLM-as-a-Judge 설명 품질 4.73/5로 보고했습니다. <strong>이 수치는 내부 발표 검증 결과이지, 외부 공인 성능 평가를 의미하지 않습니다.</strong></p>
+    <h3>대회 결과</h3><p>536개 산출물 제출팀 중 14개 팀이 오프라인 발표 심사에 진출했으며 코딩맹수 팀이 포함됐습니다. 수상팀으로 확인되지 않아 수상 표기는 하지 않았습니다.</p>
+    <div class="dialog-links"><a href="assets/tikkeul-presentation.pdf" target="_blank" rel="noopener noreferrer">최종 발표자료 PDF (29p) ↗</a><a href="https://daker.ai/public/hackathons/2026-finance-ai-challenge" target="_blank" rel="noopener noreferrer">대회 공식 페이지 ↗</a><a href="https://daker.ai/community/2026-financial-ai-challenge-14-finalists" target="_blank" rel="noopener noreferrer">발표 진출 명단 ↗</a></div>
+  </div>
+</dialog>
+
 <dialog id="modal-dcase" aria-labelledby="modal-dcase-title"><div class="dialog-heading"><div><p class="mono">2026 · AUDIO REASONING</p><h2 id="modal-dcase-title">Audio-Dependent Question Answering</h2></div><button class="dialog-close" type="button" data-close aria-label="닫기">×</button></div><div class="dialog-content"><p class="dialog-caption">DCASE 2026 Task 5 · 1st Place Overall · Workshop Paper (Equal Contribution)</p><h3>문제</h3><p>멀티초이스 오디오 질의응답 시스템은 실제 소리를 이해하지 않고 질문과 선택지의 언어적 편향만으로 답을 추측할 수 있습니다.</p><h3>접근</h3><ul><li>MOSS-Audio-8B-Thinking 기반의 간결한 답변 형식 보정</li><li>질문별로 필요한 보조 음향 분석기를 선택하는 rule-routed acoustic tagger</li><li>원본 오디오와 무음 통제 조건을 비교한 hard-example 탐색 및 GDPO 기반 LoRA 실험</li><li>선택지 순열과 다른 오디오 언어 모델의 예측을 결합하는 앙상블</li></ul><h3>결과</h3><p>공식 평가에서 최종 mixed ensemble은 58.33% Top-1 정확도로 종합 1위를 달성했습니다. Workshop 논문에서 시스템 구성과 결과를 확인할 수 있습니다.</p><div class="dialog-links"><a href="https://dcase.community/documents/workshop2026/proceedings/DCASE2026Workshop_Jun_36.pdf" target="_blank" rel="noopener noreferrer">Workshop Paper ↗</a><a href="https://dcase.community/documents/challenge2026/technical_reports/DCASE2026_Kim_55_t5.pdf" target="_blank" rel="noopener noreferrer">Technical Report ↗</a></div></div></dialog>
 <dialog id="modal-avdf" aria-labelledby="modal-avdf-title"><div class="dialog-heading"><div><p class="mono">ONGOING · MULTIMODAL</p><h2 id="modal-avdf-title">Audio-Visual Deepfake Detection</h2></div><button class="dialog-close" type="button" data-close aria-label="닫기">×</button></div><div class="dialog-content"><p class="dialog-caption">Ongoing research · Unpublished work</p><h3>연구 질문</h3><p>생성된 음성과 영상이 개별적으로는 자연스러워도, 두 모달리티의 시간적·의미적 관계에는 판별 가능한 불일치가 남을 수 있을까요?</p><h3>탐구 방향</h3><ul><li>AV-HuBERT의 audio-only / video-only / audio-visual hidden representation 분석</li><li>프레임 시프트, 음성 대체 및 시각 정보 변형을 통한 결합 특성 검증</li><li>모달리티 간 표현 관계와 예측 잔차를 활용한 탐지 특징 연구</li><li>학습 때 보지 못한 생성 모델에 대한 일반화 평가</li></ul><h3>진행 상태</h3><p>연구 중인 프로젝트로, 검증되지 않은 성능 지표나 미발표 결과는 포트폴리오에 기재하지 않았습니다.</p></div></dialog>
 <dialog id="modal-odshield" aria-labelledby="modal-odshield-title"><div class="dialog-heading"><div><p class="mono">2025 · IEEE ACCESS</p><h2 id="modal-odshield-title">OD-SHIELD</h2></div><button class="dialog-close" type="button" data-close aria-label="닫기">×</button></div><div class="dialog-content"><p class="dialog-caption">First author · IEEE Access, Vol. 13, 2025</p><h3>연구 문제</h3><p>객체 탐지기의 예측이 적대적 패치 공격에 의해 교란되는 문제를 완화하기 위한 방어 방법을 연구했습니다.</p><h3>연구 접근</h3><p>Convolutional Autoencoder를 활용해 적대적 패치의 영향을 완화하는 방어 프레임워크를 제안하고, 객체 탐지 모델의 강건성을 평가했습니다.</p><h3>논문 정보</h3><p>Byeongchan Kim 외 6명, IEEE Access 13, 98242–98252 (2025).</p><div class="dialog-links"><a href="https://doi.org/10.1109/ACCESS.2025.3576264" target="_blank" rel="noopener noreferrer">Published Paper ↗</a></div></div></dialog>
